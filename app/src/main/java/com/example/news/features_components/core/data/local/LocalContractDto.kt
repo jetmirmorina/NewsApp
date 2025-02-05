@@ -10,7 +10,7 @@ abstract class LocalContractDto {
     abstract val title: String
     abstract val url: String
     abstract val urlToImage: String?
-    abstract val favourite: Boolean
+    abstract val favorite: Boolean
     abstract val category: String
     abstract var page: Int
 }
