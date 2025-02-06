@@ -19,7 +19,7 @@ data class HeadlineDto(
     override val url: String,
     @ColumnInfo("url_to_image")
     override val urlToImage: String,
-    override val favourite: Boolean = false,
+    override val favorite: Boolean = false,
     override val category: String,
     override var page: Int
 ): LocalContractDto()
