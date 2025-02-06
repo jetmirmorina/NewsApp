@@ -73,4 +73,10 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.converter.gson)  // Converter for JSON serialization (using Moshi or Gson)
     implementation(libs.logging.interceptor) // OkHttp (Optional: for logging requests)
+
+
+    // Hilt core dependency
+    implementation(libs.hilt.android)
+    implementation(libs.androidx.hilt.navigation.compose)
+
 }

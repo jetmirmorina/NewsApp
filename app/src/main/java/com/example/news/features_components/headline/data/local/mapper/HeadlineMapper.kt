@@ -1,4 +1,4 @@
-package com.example.news.features_components.headline.data.mapper
+package com.example.news.features_components.headline.data.local.mapper
 
 import com.example.news.features_components.domain.mapper.Mapper
 import com.example.news.features_components.domain.models.NewsyArticle
@@ -36,7 +36,6 @@ class HeadlineMapper: Mapper<HeadlineDto, NewsyArticle> {
                 title = title,
                 url = url,
                 urlToImage = urlToImage,
-                favourite = favorite,
                 category = category,
                 page = page
             )

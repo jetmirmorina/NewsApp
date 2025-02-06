@@ -1,13 +1,11 @@
-package com.example.news.features_components.headline.data.local
+package com.example.news.features_components.headline.data.local.dao
 
 import androidx.paging.PagingSource
 import androidx.room.Dao
-import androidx.room.Database
 import androidx.room.Delete
-import androidx.room.Query
 import androidx.room.Insert
-import androidx.room.RoomDatabase
-import androidx.room.Update
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
 import com.example.news.features_components.headline.data.local.model.HeadlineDto
 import kotlinx.coroutines.flow.Flow
 
@@ -20,14 +18,18 @@ interface HeadlineDao {
     @Query("SELECT * FROM headline_table WHERE id=:id")
     fun getHeadlineArticle(id: Int): Flow<HeadlineDto>
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertHeadlineArticle(articles: List<HeadlineDto>)
 
     @Query(
         "DELETE FROM headline_table WHERE favourite=0"
     )
     suspend fun removeAllHeadlineArticles()
 
-    @Delete
-    suspend fun removeFavouriteArticle(headlineDto: HeadlineDto)
+    @Query(
+        "DELETE FROM headline_table WHERE id=:id AND favourite=1"
+    )
+    suspend fun removeFavouriteArticle(id: Int)
 
     @Query(
         "UPDATE headline_table SET favourite =:isFavourite WHERE id=:id"
