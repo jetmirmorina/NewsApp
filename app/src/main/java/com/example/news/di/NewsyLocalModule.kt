@@ -11,18 +11,22 @@ import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 
+
+@Module
 @InstallIn(SingletonComponent::class)
 object NewsyLocalModule {
 
     @Singleton
     @Provides
     fun provideNewsyDatabase(
-        @ApplicationContext context: Context
+        @ApplicationContext context: Context,
     ): NewsyArticleDatabase {
-        return  Room.databaseBuilder(
+        return Room.databaseBuilder(
             context,
             NewsyArticleDatabase::class.java,
             "newsy_db"
-        ).build()
+        )
+            .build()
     }
+
 }

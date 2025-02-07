@@ -1,6 +1,5 @@
-package com.example.news.ui.theme
+package com.example.news.features_presantations.core.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

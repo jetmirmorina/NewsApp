@@ -75,9 +75,14 @@ dependencies {
     implementation(libs.logging.interceptor) // OkHttp (Optional: for logging requests)
     implementation(libs.retrofit2.kotlinx.serialization.converter)
 
-
     // Hilt core dependency
     implementation(libs.hilt.android)
     implementation(libs.androidx.hilt.navigation.compose)
+
+    // ViewModel
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)// LiveData
+
+    implementation(libs.coil.compose)
 
 }
